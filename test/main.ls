@@ -29,4 +29,4 @@ describe \unix-users, ->
                     user.should.be.an.Object
                     user.account.should.be.a.string
                     user.account.length.should.be.above 0
-                done!
+            .finally done
