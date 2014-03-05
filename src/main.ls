@@ -49,4 +49,9 @@ class UnixUsers
                 return users
             .catch -> users
 
+    find: (filter) ~>
+        filter = account: filter if _.isString filter
+        @list!
+        .then _.partialRight _.find, filter
+
 module.exports = new UnixUsers!
