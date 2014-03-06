@@ -28,11 +28,11 @@ class UnixUsers
         _read \passwd
         .then (users) ->
             users.map (user) ->
-                if user.GECOS
-                    parts = user.GECOS.split \,
-                    <[ name room phone contact ]>.map (name, i) ->
-                        user[name] = parts[i] if parts[i]
+                parts = user.GECOS.split \,
+                <[ name room phone contact ]>.map (name, i) ->
+                    user[name] = parts[i] if parts[i]
                 delete user.GECOS
+
                 <[ UID GID ]>.map -> user[it] = parseInt user[it], 10
 
             uses-shadow = _.filter users, password: \x
@@ -49,9 +49,14 @@ class UnixUsers
                 return users
             .catch -> users
 
-    find: (filter) ~>
-        filter = account: filter if _.isString filter
-        @list!
-        .then _.partialRight _.find, filter
+# Extend UnixUsers with Promisified wrappers around lodash's excellent Collection methods
+<[ all any at collect contains countBy detect each eachRight every filter find findLast
+ findWhere foldl foldr forEach forEachRight groupBy include indexBy inject invoke map
+ max min pluck reduce reduceRight reject sample select shuffle size some sortBy where ]>
+.map (method) !->
+    UnixUsers::[method] = ->
+        args = _.toArray arguments
+        @list!.then (users) ->
+            _[method](users, ...args)
 
 module.exports = new UnixUsers!
