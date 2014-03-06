@@ -60,43 +60,43 @@ This is equivalent to:
 
 The following methods from lodash are supported:
 
- - Users.all → every
- - Users.any → some
- - Users.at
- - Users.collect → map
- - Users.contains
- - Users.countBy
- - Users.detect → find
- - Users.each → forEach
- - Users.eachRight → forEachRight
- - Users.every
- - Users.filter
- - Users.find
- - Users.findLast
- - Users.findWhere → find
- - Users.foldl → reduce
- - Users.foldr → reduceRight
- - Users.forEach
- - Users.forEachRight
- - Users.groupBy
- - Users.include → contains
- - Users.indexBy
- - Users.inject → reduce
- - Users.invoke
- - Users.map
- - Users.max
- - Users.min
- - Users.pluck
- - Users.reduce
- - Users.reduceRight
- - Users.reject
- - Users.sample
- - Users.select → filter
- - Users.shuffle
- - Users.size
- - Users.some
- - Users.sortBy
- - Users.where
+ - Users.all → [every](http://lodash.com/docs#every)
+ - Users.any → [some](http://lodash.com/docs#some)
+ - Users.[at](http://lodash.com/docs#at)
+ - Users.collect → [map](http://lodash.com/docs#map)
+ - Users.[contains](http://lodash.com/docs#contains)
+ - Users.[countBy](http://lodash.com/docs#countBy)
+ - Users.detect → [find](http://lodash.com/docs#find)
+ - Users.each → [forEach](http://lodash.com/docs#forEach)
+ - Users.eachRight → [forEachRight](http://lodash.com/docs#forEachRight)
+ - Users.[every](http://lodash.com/docs#every)
+ - Users.[filter](http://lodash.com/docs#filter)
+ - Users.[find](http://lodash.com/docs#find)
+ - Users.[findLast](http://lodash.com/docs#findLast)
+ - Users.findWhere → [find](http://lodash.com/docs#find)
+ - Users.foldl → [reduce](http://lodash.com/docs#reduce)
+ - Users.foldr → [reduceRight](http://lodash.com/docs#reduceRight)
+ - Users.[forEach](http://lodash.com/docs#forEach)
+ - Users.[forEachRight](http://lodash.com/docs#forEachRight)
+ - Users.[groupBy](http://lodash.com/docs#groupBy)
+ - Users.include → [contains](http://lodash.com/docs#contains)
+ - Users.[indexBy](http://lodash.com/docs#indexBy)
+ - Users.inject → [reduce](http://lodash.com/docs#reduce)
+ - Users.[invoke](http://lodash.com/docs#invoke)
+ - Users.[map](http://lodash.com/docs#map)
+ - Users.[max](http://lodash.com/docs#max)
+ - Users.[min](http://lodash.com/docs#min)
+ - Users.[pluck](http://lodash.com/docs#pluck)
+ - Users.[reduce](http://lodash.com/docs#reduce)
+ - Users.[reduceRight](http://lodash.com/docs#reduceRight)
+ - Users.[reject](http://lodash.com/docs#reject)
+ - Users.[sample](http://lodash.com/docs#sample)
+ - Users.select → [filter](http://lodash.com/docs#filter)
+ - Users.[shuffle](http://lodash.com/docs#shuffle)
+ - Users.[size](http://lodash.com/docs#size)
+ - Users.[some](http://lodash.com/docs#some)
+ - Users.[sortBy](http://lodash.com/docs#sortBy)
+ - Users.[where](http://lodash.com/docs#where)
 
 ### Users.authenticate(*string* username, *string* password)
 
