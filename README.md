@@ -56,6 +56,47 @@ This is equivalent to
         });
     });
 
+The following methods from lodash are supported:
+
+ - _.all → every
+ - _.any → some
+ - _.at
+ - _.collect → map
+ - _.contains
+ - _.countBy
+ - _.detect → find
+ - _.each → forEach
+ - _.eachRight → forEachRight
+ - _.every
+ - _.filter
+ - _.find
+ - _.findLast
+ - _.findWhere → find
+ - _.foldl → reduce
+ - _.foldr → reduceRight
+ - _.forEach
+ - _.forEachRight
+ - _.groupBy
+ - _.include → contains
+ - _.indexBy
+ - _.inject → reduce
+ - _.invoke
+ - _.map
+ - _.max
+ - _.min
+ - _.pluck
+ - _.reduce
+ - _.reduceRight
+ - _.reject
+ - _.sample
+ - _.select → filter
+ - _.shuffle
+ - _.size
+ - _.some
+ - _.sortBy
+ - _.toArray
+ - _.where
+
 ### Users.authenticate(*string* username, *string* password)
 
 **N.B.** This is not yet implemented.
