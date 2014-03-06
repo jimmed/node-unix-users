@@ -43,10 +43,14 @@ If a returned user's password is stored in the shadow password file, it will be 
 
 ### Users.map(callback)
 
-`.map`, along with every other method in the lodash Collections library is proxied via a Promise. For example:
+This returns a Promise to apply the supplied `callback` to each user, and return an array of the results.
 
-    Users.map(function(user) {
-        console.log('Found user:', user.account);
+    Users
+    .map(function(user) {
+        return user.UID;
+    })
+    .then(function(UIDs) {
+        console.log('All UIDs:', UIDs);
     });
 
 This is equivalent to:
@@ -54,9 +58,31 @@ This is equivalent to:
     Users.list()
     .then(function(users) {
         return _.map(users, function(user) {
-            console.log('Found user:', user.account);
+            return user.UID;
         });
+    })
+    .then(function(UIDs) {
+        console.log('All UIDs:', UIDs);
     });
+
+**N.B.** It would be quicker to use `.pluck`:
+
+    Users
+    .pluck('UID')
+    .then(function(UIDs) {
+        console.log('All UIDs', UIDs);
+    });
+    
+### Users.find([*callback=identity*], [*thisArg*])
+
+This is a proxy to the lodash method [_.find](http://lodash.com/docs#find) via a Promise. For example:
+
+    Users.find({ account: 'jim' })
+    .then(function(jim) {
+        console.log('Jim\'s user ID is:', jim.UID);
+    });
+
+### Lodash Collections Methods
 
 The following methods from lodash are supported:
 
