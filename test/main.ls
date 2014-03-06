@@ -46,33 +46,18 @@ describe \unix-users, ->
                     user.should.be.an.Object
                     user.account.should.be.a.string
                     user.account.length.should.be.above 0
-            .finally done
+                done!
 
     describe \#find, ->
 
         _it "should return a Promise", ->
             users = instance!
-            find-result = users.find \nobody .catch ->
+            find-result = users.find \nobody
             find-result.should.be.an.Object
             find-result.then.should.be.a.Function
 
-        _it "should resolve to a user, called with account name", (done) ->
+        _it "should resolve to a user", (done) ->
             users = instance!
 
-            users.find testUser.name
-            .then -> it.should.eql testUser
-            .finally done
-
-        _it "should resolve to a user, called with properties", (done) ->
-            users = instance!
-
-            users.find UID: testUser.UID
-            .then -> it.should.eql testUser
-            .finally done
-
-        _it "should resolve to a user, called with predicate", (done) ->
-            users = instance!
-
-            users.find -> it.account is testUser.account
-            .then -> it.should.eql testUser
-            .finally done
+            users.find account: testUser.account
+            .then -> it.should.eql testUser; done!
