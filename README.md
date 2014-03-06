@@ -39,6 +39,8 @@ If a returned user's password is stored in the shadow password file, it will be 
  - **inactivityPeriod**: The number of days after password expires that account is disabled.
  - **expire**: Datestamp of when the password will (or has) expire(d). 
 
+**N.B.**: If `Users.list` is called without sufficient permission to read the shadow file, the users list will be returned gracefully, with `'x'` in each password field.
+
 ### Users.map(callback)
 
 `.map`, along with every other method in the lodash Collections library is proxied via a Promise. For example:
@@ -47,7 +49,7 @@ If a returned user's password is stored in the shadow password file, it will be 
         console.log('Found user:', user.account);
     });
 
-This is equivalent to
+This is equivalent to:
 
     Users.list()
     .then(function(users) {
@@ -58,44 +60,43 @@ This is equivalent to
 
 The following methods from lodash are supported:
 
- - _.all → every
- - _.any → some
- - _.at
- - _.collect → map
- - _.contains
- - _.countBy
- - _.detect → find
- - _.each → forEach
- - _.eachRight → forEachRight
- - _.every
- - _.filter
- - _.find
- - _.findLast
- - _.findWhere → find
- - _.foldl → reduce
- - _.foldr → reduceRight
- - _.forEach
- - _.forEachRight
- - _.groupBy
- - _.include → contains
- - _.indexBy
- - _.inject → reduce
- - _.invoke
- - _.map
- - _.max
- - _.min
- - _.pluck
- - _.reduce
- - _.reduceRight
- - _.reject
- - _.sample
- - _.select → filter
- - _.shuffle
- - _.size
- - _.some
- - _.sortBy
- - _.toArray
- - _.where
+ - Users.all → every
+ - Users.any → some
+ - Users.at
+ - Users.collect → map
+ - Users.contains
+ - Users.countBy
+ - Users.detect → find
+ - Users.each → forEach
+ - Users.eachRight → forEachRight
+ - Users.every
+ - Users.filter
+ - Users.find
+ - Users.findLast
+ - Users.findWhere → find
+ - Users.foldl → reduce
+ - Users.foldr → reduceRight
+ - Users.forEach
+ - Users.forEachRight
+ - Users.groupBy
+ - Users.include → contains
+ - Users.indexBy
+ - Users.inject → reduce
+ - Users.invoke
+ - Users.map
+ - Users.max
+ - Users.min
+ - Users.pluck
+ - Users.reduce
+ - Users.reduceRight
+ - Users.reject
+ - Users.sample
+ - Users.select → filter
+ - Users.shuffle
+ - Users.size
+ - Users.some
+ - Users.sortBy
+ - Users.where
 
 ### Users.authenticate(*string* username, *string* password)
 
